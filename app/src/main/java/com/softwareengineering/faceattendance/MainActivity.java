@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView;
 
-        textView = findViewById(R.id.textid);
+
     }
 }

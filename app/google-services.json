@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767588793860",
+    "project_id": "pythonfirebasebucket",
+    "storage_bucket": "pythonfirebasebucket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767588793860:android:0c00ea7ab25b1b8bee3f51",
+        "android_client_info": {
+          "package_name": "com.softwareengineering.faceattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767588793860-tilio0e29jej0p5a9gpjhoh47djmatau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxXKUbo_8XMsfpB8lx6__eSWG5jqNL4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767588793860-tilio0e29jej0p5a9gpjhoh47djmatau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
