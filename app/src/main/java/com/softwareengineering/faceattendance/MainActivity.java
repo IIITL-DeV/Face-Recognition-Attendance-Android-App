@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     Uri filepath;
 
     Bitmap bitmap;
+    EditText roll;
 
 
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         img = (ImageView)findViewById(R.id.imageview_id);
         upload = (Button) findViewById(R.id.upload_id);
         takephoto = (Button) findViewById(R.id.gallery_id);
+        roll = (EditText) findViewById(R.id.rollno_id);
 
 
         takephoto.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference().child("image1");
+        StorageReference uploader = storage.getReference("faces/" + roll.getText().toString());
         uploader.putFile(filepath)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>()
                 {
