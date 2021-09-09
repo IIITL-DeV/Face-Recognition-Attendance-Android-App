@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView;
 
         img = (ImageView)findViewById(R.id.imageview_id);
-        upload = (Button) findViewById(R.id.camera_id);
+        upload = (Button) findViewById(R.id.upload_id);
         takephoto = (Button) findViewById(R.id.gallery_id);
 
 
