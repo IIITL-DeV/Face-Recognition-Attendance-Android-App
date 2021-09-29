@@ -6,67 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageview_id"
-        android:layout_width="303dp"
-        android:layout_height="284dp"
-        android:background="#9E5080"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
 
     <Button
-        android:id="@+id/gallery_id"
-        android:layout_width="176dp"
-        android:layout_height="57dp"
-        android:text="Select Image"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/login_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up_id"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804" />
-
-    <EditText
-        android:id="@+id/name_id"
-        android:layout_width="254dp"
-        android:layout_height="58dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
-
-    <EditText
-        android:id="@+id/rollno_id"
-        android:layout_width="254dp"
-        android:layout_height="58dp"
-        android:ems="10"
-        android:hint="Enrollment Number"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_id"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <Button
-        android:id="@+id/upload_id"
-        android:layout_width="176dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="56dp"
-        android:text="UPLOAD IMAGE"
+        android:id="@+id/sign_up_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="293dp"
+        android:text="SIGN UP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gallery_id"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.569" />
 
+    <TextView
+        android:id="@+id/title_text_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WELCOME TO THE FACE-ATTENDANCE APP"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/login_Id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
 </androidx.constraintlayout.widget.ConstraintLayout>
