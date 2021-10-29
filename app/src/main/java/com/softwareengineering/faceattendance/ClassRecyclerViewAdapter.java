@@ -29,8 +29,8 @@ public class ClassRecyclerViewAdapter extends RecyclerView.Adapter<ClassRecycler
 
         for(String i : subjects){
             System.out.println(i);
-
         }
+
 
     }
 
@@ -79,7 +79,6 @@ public class ClassRecyclerViewAdapter extends RecyclerView.Adapter<ClassRecycler
                 public void onClick(View v) {
 
                     Toast.makeText(mContext,"open the new Activity",Toast.LENGTH_SHORT).show();
-
 
 
                 }

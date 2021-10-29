@@ -10,10 +10,14 @@
         <entry key="..\:/Users/grove/AndroidStudioProjects/Face-Attendance/app/src/main/res/layout/activity_student_menu.xml" value="0.13903985507246377" />
         <entry key="..\:/Users/grove/AndroidStudioProjects/Face-Attendance/app/src/main/res/layout/activity_upload_image.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/grove/AndroidStudioProjects/Face-Attendance/app/src/main/res/layout/activity_uploadsection.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/grove/Documents/Face-Attendance-local/app/src/main/res/layout/activity_dashboard.xml" value="0.11755802219979819" />
+        <entry key="..\:/Users/grove/Documents/Face-Attendance-local/app/src/main/res/layout/activity_student_menu.xml" value="0.11755802219979819" />
+        <entry key="..\:/Users/grove/Documents/Face-Attendance-local/app/src/main/res/layout/content_class.xml" value="0.11755802219979819" />
+        <entry key="..\:/Users/grove/Documents/Face-Attendance-local/app/src/main/res/layout/list_item_subject.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

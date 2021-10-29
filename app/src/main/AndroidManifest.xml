@@ -19,6 +19,7 @@
         <activity
             android:name=".StudentMenu"
             android:exported="true" />
+        <activity android:name=".DashboardActivity"/>
         <activity
             android:name=".UploadImage"
             android:exported="true" />
