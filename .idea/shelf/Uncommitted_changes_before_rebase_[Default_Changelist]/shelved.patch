@@ -1,0 +1,38 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\r\napply plugin: 'com.google.gms.google-services'\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.softwareengineering.faceattendance\"\r\n        minSdkVersion 23\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: \"libs\", include: [\"*.jar\"])\r\n    implementation 'androidx.appcompat:appcompat:1.3.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'\r\n    implementation 'com.google.firebase:firebase-storage:19.1.1'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n\r\n    implementation 'com.karumi:dexter:6.1.2'\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision c5d214b124e635c7084438f41029aeaa01bd85c4)
++++ app/build.gradle	(date 1631194189476)
+@@ -31,7 +31,8 @@
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+-
+     implementation 'com.karumi:dexter:6.1.2'
+ 
++    implementation 'com.karumi:dexter:6.1.2'
++
+ }
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"11\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision c5d214b124e635c7084438f41029aeaa01bd85c4)
++++ .idea/compiler.xml	(date 1631194189616)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="11" />
++    <bytecodeTargetLevel target="1.8" />
+   </component>
+ </project>
+\ No newline at end of file
