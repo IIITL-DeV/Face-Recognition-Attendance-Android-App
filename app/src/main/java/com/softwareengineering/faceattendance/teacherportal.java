@@ -67,17 +67,6 @@ public class teacherportal extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-        /*
-
-
-         */
-
-
-
-
-
     }
 }
 
