@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".teacherportal"
+            android:exported="true" />
+        <activity
             android:name=".classActivity"
             android:label="@string/title_activity_class"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StudentMenu"
             android:exported="true" />
-        <activity android:name=".DashboardActivity"/>
+        <activity android:name=".DashboardActivity" />
         <activity
             android:name=".UploadImage"
             android:exported="true" />

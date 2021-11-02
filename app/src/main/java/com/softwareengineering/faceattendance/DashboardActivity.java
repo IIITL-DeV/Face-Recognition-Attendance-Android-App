@@ -20,7 +20,7 @@ public class DashboardActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.dashboardRecyclerView);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(layoutManager);
 
 

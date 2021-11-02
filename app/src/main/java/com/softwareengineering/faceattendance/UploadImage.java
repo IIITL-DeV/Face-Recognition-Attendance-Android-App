@@ -127,7 +127,11 @@ public class UploadImage extends AppCompatActivity {
 
                         dialog.dismiss();
 
-                        Toast.makeText(getApplicationContext(), "File Uploaded", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "File Uploaded", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(UploadImage.this, DashboardActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 })
 
