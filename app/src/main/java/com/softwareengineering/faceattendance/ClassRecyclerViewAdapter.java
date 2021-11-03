@@ -14,59 +14,53 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class ClassRecyclerViewAdapter extends RecyclerView.Adapter<ClassRecyclerViewAdapter.ViewHolder> {
 
-    private Context mContext;
-    private int count;
-    private String[] subjects;
+    Context context;
+    ArrayList<user> userArrayList;
 
-    public ClassRecyclerViewAdapter(Context mContext) {
-        this.mContext = mContext;
-        Utils.setDummyData();
-        this.subjects = Utils.getAllSubjectNames();
-
-        for(String i : subjects){
-            System.out.println(i);
-        }
-
-
+    public ClassRecyclerViewAdapter(Context context, ArrayList<user> userArrayList) {
+        this.context = context;
+        this.userArrayList = userArrayList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_subject,parent,false);
+        View view = LayoutInflater
+                .from(context)
+                .inflate(R.layout.list_item_subject,parent,false);
+
         return new ViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ClassRecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.txtClassName.setText(subjects[position]);
-        if(Utils.getSubject2AttendanceMap().containsKey(subjects[position])) {
-            holder.txtPercentage.setText(String.valueOf(Utils.getSubject2AttendanceMap().get(subjects[position])));
-        }
 
-        System.out.println("onbindviewhilder called for : "+String.valueOf(position));
+        user ouruser = userArrayList.get(position);
 
+        holder.txtClassName.setText(ouruser.subject);
+        holder.txtPercentage.setText(ouruser.percentage);
 
     }
 
     @Override
     public int getItemCount() {
-        return subjects.length;
+        return userArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private CardView parent;
+        private CardView cardView;
         private TextView txtClassName,txtPercentage;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
 
-            parent=itemView.findViewById(R.id.ParentCard);
+            cardView=itemView.findViewById(R.id.ParentCard);
             txtClassName = itemView.findViewById(R.id.class_name);
             txtPercentage = itemView.findViewById(R.id.percentage);
 
@@ -74,11 +68,11 @@ public class ClassRecyclerViewAdapter extends RecyclerView.Adapter<ClassRecycler
 
 
 
-            parent.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Toast.makeText(mContext,"open the new Activity",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"open the new Activity",Toast.LENGTH_SHORT).show();
 
 
                 }

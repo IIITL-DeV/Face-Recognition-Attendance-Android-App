@@ -22,7 +22,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -48,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     Dialog dialog, dialog2;
     Integer mode = 0;
     Integer sign_log = 0;
-
+    FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         sign_log ==2 -> Login
          */
 
-
+        db = FirebaseFirestore.getInstance();
         login = (Button) findViewById(R.id.login_Id);
         signup = (Button) findViewById(R.id.sign_up_id);
 
@@ -103,19 +109,63 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(name.getText().toString().equals("Mohsin Ahmed") && rollnum.getText().toString().equals("LIT2019066"))
-                {
-                    Toast.makeText(getApplicationContext(), "Signed in sucessfully ", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "Incorrect Name or Roll Number ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
+              db.collection(rollnum.getText().toString()).document("validproof")
+                      .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                  @Override
+                  public void onSuccess(DocumentSnapshot documentSnapshot) {
+                      if(documentSnapshot.exists())
+                      {
+                          Bundle mBundle = new Bundle();
+                          mBundle.putString("rollnum", rollnum.getText().toString());
+                          Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                          intent.putExtras(mBundle);
+                          startActivity(intent);
+                          finish();
+                      }
+                      else
+                      {
+                          Toast.makeText(MainActivity.this, "No data found",Toast.LENGTH_SHORT ).show();
+                      }
+
+                  }
+              }).addOnFailureListener(new OnFailureListener() {
+                  @Override
+                  public void onFailure(@NonNull Exception e) {
+
+                      Toast.makeText(MainActivity.this, "Failed",Toast.LENGTH_SHORT ).show();
+
+                  }
+              });
+                /*
+                db.collection(rollnum.getText().toString())
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(getApplicationContext(), "Signed in sucessfully ", Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else
+                                {
+                                    Toast.makeText(getApplicationContext(), "No data exists", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+
+                 */
+
 
             }
         });

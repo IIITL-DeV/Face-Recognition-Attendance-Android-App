@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -30,6 +35,15 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UploadImage extends AppCompatActivity {
 
@@ -39,18 +53,19 @@ public class UploadImage extends AppCompatActivity {
     Uri filepath;
 
     Bitmap bitmap;
-
+    FirebaseFirestore db;
+    FirebaseFirestore db2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_image);
-
-
+        //db2 = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         img = (ImageView)findViewById(R.id.imageview_id);
         upload = (Button) findViewById(R.id.upload_id);
         takephoto = (Button) findViewById(R.id.gallery_id);
         roll = (EditText) findViewById(R.id.rollno_id);
-
+        name = (EditText) findViewById(R.id.name_id);
 
         takephoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +98,33 @@ public class UploadImage extends AppCompatActivity {
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                DateTimeFormatter dtf = null;
+                String date = "didnotwork";
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    dtf = DateTimeFormatter.ofPattern("uuuuMMdd");
+                   DateTimeFormatter dtfTime = DateTimeFormatter.ofPattern("HHmm");
+                    LocalDate localDate = LocalDate.now();
+                    LocalTime localTime = LocalTime.now();
+                    date = dtf.format(localDate) + dtfTime.format(localTime);
+                }
+
+
+                Map<String, Object> blank = new HashMap<>();
+                blank.put("name", name.getText().toString());
+                blank.put("lastupdated", date);
+
+
+                db.collection("students")
+                        .document(roll.getText().toString())
+                        .set(blank);
+
+                Map<String,Object> blank2 = new HashMap<>();
+                db.collection(roll.getText().toString())
+                        .document("validproof")
+                        .set(blank2);
+
                 uploadtofirebase();
 
             }
@@ -127,11 +169,13 @@ public class UploadImage extends AppCompatActivity {
 
                         dialog.dismiss();
 
-                        Toast.makeText(getApplicationContext(), "File Uploaded", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(UploadImage.this, DashboardActivity.class);
-                        startActivity(intent);
-                        finish();
+                        Toast.makeText(getApplicationContext(), "File Uploaded", Toast.LENGTH_SHORT).show();
+                       // Bundle mBundle = new Bundle();
+                      //  mBundle.putString("rollnum", roll.getText().toString());
+                       // Intent intent = new Intent(UploadImage.this, DashboardActivity.class);
+                       // startActivity(intent);
+                        //finish();
                     }
                 })
 
