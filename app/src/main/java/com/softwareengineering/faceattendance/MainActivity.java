@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Intent intent = new Intent(MainActivity.this, UploadImage.class);
                     startActivity(intent);
-                    finish();
+                   // finish();
                 }
 
                 else
@@ -154,16 +154,16 @@ public class MainActivity extends AppCompatActivity {
 
                 if(sign_log==1)
                 {
-                    Intent intent = new Intent(MainActivity.this, UploadImage.class);
+                    Intent intent = new Intent(MainActivity.this, teacherportal.class);
                     startActivity(intent);
-                    finish();
+                    //finish();
                 }
 
                 else
                 {
                     Intent intent = new Intent(MainActivity.this, teacherportal.class);
                     startActivity(intent);
-                    finish();
+                    //finish();
                     //dialog.show();
                 }
 
