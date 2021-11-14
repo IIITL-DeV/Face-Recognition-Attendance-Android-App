@@ -18,6 +18,7 @@ of face recognition and a mobile application.
 # Screenshots
 
 Home Screen, Sign up/ Login  menu for students and teachers
+
 ![Screenshot 2021-11-14 165550](https://user-images.githubusercontent.com/57047418/141684266-fcaa8aeb-9b64-42f3-abe0-eb0e74d5d9ea.png) ![Screenshot 2021-11-14 165805](https://user-images.githubusercontent.com/57047418/141684461-ae68c7aa-6ea5-4fa8-b9ed-a7b1ac3744a7.png)
 
 
