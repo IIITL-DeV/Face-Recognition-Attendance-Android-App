@@ -34,3 +34,9 @@ Registrations inside Teacher's Menu for adding a class dynamically
 Student Login and Dashboard Portal for accessing their attendance and subjects dynamically
 
 ![Screenshot 2021-11-14 170637](https://user-images.githubusercontent.com/57047418/141684612-8846f4e7-ef5b-4b07-8a05-eeebb21965e9.png)
+
+
+Detection and working of backend machine learning encodings
+
+![Screenshot 2021-11-14 171017](https://user-images.githubusercontent.com/57047418/141684752-36e943fd-66e5-4682-b77f-a74864a37605.png)
+
