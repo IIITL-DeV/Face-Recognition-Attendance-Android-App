@@ -20,6 +20,9 @@ Rajat Napalchyal - LIT2019076
 Our project aims to automate the conventional attendance management system for both ends (students and teachers) by using machine learning model 
 of face recognition and a mobile application.
 
+Additionally, the android application counterpart for students and teachers allows for teachers to access Realtime updating of classes and schedules. And using this database and the CNN algorithms done on the live surveillance updating the database, the students can retrieve information about their latest attendance percentage, records for each class they're enrolled in.
+
+
 # Screenshots
 
 Home Screen, Sign up/ Login  menu for students and teachers
