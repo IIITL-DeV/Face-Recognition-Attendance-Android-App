@@ -6,10 +6,15 @@ Group 3
 
 # Members
 Hriday Grover - LIT2019042 
+
 Mohsin Ahmed - LIT2019066 
+
 Mark Andrew - LIT201940 
+
 Bhanu Prakash Singh - LIT201943
+
 Rajat Napalchyal - LIT2019076
+
 
 # Overview
 Our project aims to automate the conventional attendance management system for both ends (students and teachers) by using machine learning model 
