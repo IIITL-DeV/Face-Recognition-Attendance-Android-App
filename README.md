@@ -5,9 +5,9 @@ This repository contains the code for Face Attenance Android app.
 Group 3 
 
 # Members
-Hriday Grover - LIT2019042 - @Grovercode
-Mohsin Ahmed - LIT2019066 - 
-Mark Andrew - LIT201940 -@lit2019
+Hriday Grover - LIT2019042 
+Mohsin Ahmed - LIT2019066 
+Mark Andrew - LIT201940 
 Bhanu Prakash Singh - LIT201943
 Rajat Napalchyal - LIT2019076
 
