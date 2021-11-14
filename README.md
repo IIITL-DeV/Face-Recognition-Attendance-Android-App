@@ -1,4 +1,4 @@
-# Face-Attendance Android Application
+# Face-Recognition Attendance: Android App
 This repository contains the code for Face Attenance Android app. 
 
 # By 
