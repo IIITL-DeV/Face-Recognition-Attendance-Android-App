@@ -48,3 +48,12 @@ Detection and working of backend machine learning encodings
 
 ![Screenshot 2021-11-14 171017](https://user-images.githubusercontent.com/57047418/141684752-36e943fd-66e5-4682-b77f-a74864a37605.png)
 
+
+
+## To Run on Android Studio
+
+Clone this repository
+````
+git clone https://github.com/Grovercode/Face-Recognition-Attendance-Android-App.git
+````
+Open the project in Android Studio and Run.
